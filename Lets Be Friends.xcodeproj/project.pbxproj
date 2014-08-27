@@ -12,6 +12,9 @@
 		8EBA877819AE16FA006C0D35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EBA877619AE16FA006C0D35 /* Main.storyboard */; };
 		8EBA877A19AE16FA006C0D35 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EBA877919AE16FA006C0D35 /* Images.xcassets */; };
 		8EBA878619AE16FA006C0D35 /* Lets_Be_FriendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBA878519AE16FA006C0D35 /* Lets_Be_FriendsTests.swift */; };
+		8EBA879619AE1819006C0D35 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBA879319AE1819006C0D35 /* Bolts.framework */; };
+		8EBA879719AE1819006C0D35 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBA879419AE1819006C0D35 /* ParseFacebookUtils.framework */; };
+		8EBA879819AE1819006C0D35 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EBA879519AE1819006C0D35 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,10 @@
 		8EBA877F19AE16FA006C0D35 /* Lets Be FriendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lets Be FriendsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBA878419AE16FA006C0D35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EBA878519AE16FA006C0D35 /* Lets_Be_FriendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lets_Be_FriendsTests.swift; sourceTree = "<group>"; };
+		8EBA878F19AE1776006C0D35 /* Lets Be Friends-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lets Be Friends-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		8EBA879319AE1819006C0D35 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		8EBA879419AE1819006C0D35 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		8EBA879519AE1819006C0D35 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EBA879719AE1819006C0D35 /* ParseFacebookUtils.framework in Frameworks */,
+				8EBA879819AE1819006C0D35 /* Parse.framework in Frameworks */,
+				8EBA879619AE1819006C0D35 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +67,7 @@
 		8EBA876419AE16FA006C0D35 = {
 			isa = PBXGroup;
 			children = (
+				8EBA879219AE17C7006C0D35 /* Framesworks */,
 				8EBA876F19AE16FA006C0D35 /* Lets Be Friends */,
 				8EBA878219AE16FA006C0D35 /* Lets Be FriendsTests */,
 				8EBA876E19AE16FA006C0D35 /* Products */,
@@ -87,6 +98,7 @@
 		8EBA877019AE16FA006C0D35 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8EBA878F19AE1776006C0D35 /* Lets Be Friends-Bridging-Header.h */,
 				8EBA877119AE16FA006C0D35 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -107,6 +119,16 @@
 				8EBA878419AE16FA006C0D35 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8EBA879219AE17C7006C0D35 /* Framesworks */ = {
+			isa = PBXGroup;
+			children = (
+				8EBA879319AE1819006C0D35 /* Bolts.framework */,
+				8EBA879419AE1819006C0D35 /* ParseFacebookUtils.framework */,
+				8EBA879519AE1819006C0D35 /* Parse.framework */,
+			);
+			name = Framesworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,9 +347,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Lets Be Friends/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lets Be Friends-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -336,9 +365,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "Lets Be Friends/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lets Be Friends-Bridging-Header.h";
 			};
 			name = Release;
 		};
